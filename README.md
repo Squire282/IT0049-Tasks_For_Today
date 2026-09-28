@@ -1,69 +1,66 @@
-# CodeIgniter 4 Application Starter
+\# Tasks for Today Management System
 
-## What is CodeIgniter?
+A simple task management web application developed using CodeIgniter 4 for IT0049 \- Web System Technologies.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+\#\# Features
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+\- View tasks scheduled for today  
+\- View all tasks  
+\- View user profile information  
+\- About page containing developer information  
+\- MySQL database integration
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+\#\# Pages
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+\- \`/\` \- Displays tasks scheduled for today  
+\- \`/tasks\` \- Displays all tasks  
+\- \`/profile\` \- Displays the demo user's information  
+\- \`/about\` \- Displays information about the system and developer
 
-## Installation & updates
+\#\# Requirements
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+\- PHP  
+\- Composer  
+\- MySQL  
+\- XAMPP  
+\- CodeIgniter 4
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+\#\# Installation
 
-## Setup
+1\. Clone or download this repository.
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+2\. Install the required dependencies:
 
-## Important Change with index.php
+   composer install
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+3\. Create a MySQL database named:
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+   tasks\_for\_today
 
-**Please** read the user guide for a better explanation of how CI4 works!
+4\. Import the database file located at:
 
-## Repository Management
+   database/tasks\_for\_today.sql
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+5\. Rename the \`env\` file to \`.env\`.
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+6\. Configure the database connection in \`.env\`:
 
-## Server Requirements
+   database.default.hostname \= localhost  
+   database.default.database \= tasks\_for\_today  
+   database.default.username \= root  
+   database.default.password \=  
+   database.default.DBDriver \= MySQLi  
+   database.default.port \= 3306
 
-PHP version 8.2 or higher is required, with the following extensions installed:
+7\. Start the CodeIgniter development server:
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+   php spark serve
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
+8\. Open the application in your browser:
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+   http://localhost:8080
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+\#\# Developer
+
+YOUR NAME HERE
+
