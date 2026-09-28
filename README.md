@@ -62,5 +62,5 @@ A simple task management web application developed using CodeIgniter 4 for IT004
 
 \#\# Developer
 
-YOUR NAME HERE
+Mc Kenrick Cafugauan
 
