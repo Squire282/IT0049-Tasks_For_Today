@@ -8,10 +8,16 @@
 <body>
 
     <nav>
-        <a href="/">Home</a>
-        <a href="/tasks">Task List</a>
-        <a href="/profile">Profile</a>
-        <a href="/about">About</a>
+    <a href="/">Home</a>
+    <a href="/tasks">Task List</a>
+    <a href="/profile">Profile</a>
+    <a href="/about">About</a>
+
+    <?php if (session()->get('logged_in')): ?>
+        <a href="/logout">Logout</a>
+    <?php else: ?>
+        <a href="/login">Login</a>
+    <?php endif; ?>
     </nav>
 
     <div class="container">
@@ -34,7 +40,7 @@
         <h2>Developer</h2>
 
         <p>
-            <strong>Name:</strong> YOUR NAME HERE
+            <strong>Name:</strong> Mc Kenrick Cafugauan
         </p>
 
     </div>

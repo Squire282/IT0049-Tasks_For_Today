@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2026 at 01:22 PM
+-- Generation Time: Oct 02, 2026 at 03:43 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -32,22 +32,24 @@ CREATE TABLE `tasks` (
   `title` varchar(150) NOT NULL,
   `status` varchar(20) NOT NULL DEFAULT 'pending',
   `task_date` date NOT NULL,
-  `created_at` datetime NOT NULL
+  `created_at` datetime NOT NULL,
+  `is_archived` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tasks`
 --
 
-INSERT INTO `tasks` (`id`, `title`, `status`, `task_date`, `created_at`) VALUES
-(1, 'Finish Web Systems Technicals', 'pending', '2026-09-28', '2026-09-28 19:02:20'),
-(2, 'Review CodeIgniter Commands', 'completed', '2026-09-28', '2026-09-28 19:02:20'),
-(3, 'Study MVC concepts', 'pending', '2026-09-28', '2026-09-28 19:02:20'),
-(4, 'Prepare Github Repository\r\n', 'pending', '2026-09-27', '2026-09-28 19:02:20'),
-(5, 'Update GitHub repository', 'completed', '2026-09-27', '2026-09-28 19:02:20'),
-(6, 'Review Database', 'pending', '2026-09-29', '2026-09-28 19:02:20'),
-(7, 'Practice SQL Queries', 'pending', '2026-09-29', '2026-09-28 19:02:20'),
-(8, 'Final Checks for Technical\r\n', 'completed', '2026-09-30', '2026-09-28 19:02:20');
+INSERT INTO `tasks` (`id`, `title`, `status`, `task_date`, `created_at`, `is_archived`) VALUES
+(1, 'Finish Web Systems Technicals', 'pending', '2026-09-28', '2026-09-28 19:02:20', 1),
+(2, 'Review CodeIgniter Commands', 'completed', '2026-09-28', '2026-09-28 19:02:20', 0),
+(3, 'Study MVC concepts', 'pending', '2026-09-28', '2026-09-28 19:02:20', 0),
+(4, 'Prepare Github Repository\r\n', 'pending', '2026-09-27', '2026-09-28 19:02:20', 1),
+(5, 'Update GitHub repository', 'completed', '2026-09-27', '2026-09-28 19:02:20', 1),
+(6, 'Review Database', 'pending', '2026-09-29', '2026-09-28 19:02:20', 0),
+(7, 'Practice SQL Queries', 'pending', '2026-09-29', '2026-09-28 19:02:20', 0),
+(8, 'Final Checks for Technical\r\n', 'completed', '2026-09-30', '2026-09-28 19:02:20', 0),
+(9, 'Finish TSA2', 'pending', '2026-10-15', '2026-10-02 13:32:33', 0);
 
 -- --------------------------------------------------------
 
@@ -60,15 +62,16 @@ CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,
   `full_name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `created_at` datetime NOT NULL
+  `created_at` datetime NOT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `full_name`, `email`, `created_at`) VALUES
-(1, 'Patrick', 'Patrick Generoso', 'pgeneroso@example.com', '2026-09-28 19:02:26');
+INSERT INTO `users` (`id`, `username`, `full_name`, `email`, `created_at`, `password`) VALUES
+(1, 'Patrick', 'Patrick Generoso', 'pgeneroso@example.com', '2026-09-28 19:02:26', '$2y$10$NWJbh9NqtQvd1ceGYCMFdef7imF0yCrN7ZYYGDWtGge.XMiGh7geq');
 
 --
 -- Indexes for dumped tables
@@ -95,7 +98,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
